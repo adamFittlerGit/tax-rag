@@ -44,7 +44,7 @@ export default function Home() {
   }, [query]); // Include query dependency to use the latest query when enter is pressed
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-2  font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center w-2/3">
         {response && (
             <div className="flex items-center">
@@ -65,15 +65,22 @@ export default function Home() {
             </div>
           )}
         {!response && (
-          <div className="grid grid-cols-5 flex items-center justify-items">
+          <div className="flex items-center justify-items">
             <Image
               src="/happyhg.png" // path to the image in the public folder
               alt="Happy face logo"
               width={50} // Adjust the width
               height={50} // Adjust the height
-              className="col-span-1"
+              className=""
             />
-            <h1 className="text-2xl font-bold col-span-4">What can I help with today?</h1>
+            <TypeAnimation
+                sequence={[
+                  "What can I help with today?", 
+                ]}
+                cursor={true}
+                repeat={1}
+                className="text-2xl font-bold p-2 m-2 "
+              />
           </div>
         )}
         <form
