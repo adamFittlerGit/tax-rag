@@ -5,7 +5,7 @@ import { TypeAnimation } from 'react-type-animation';
 
 export default function Home() {
   const [query, setQuery] = useState("");
-  const [response, setResponse] = useState("");
+  const [response, setResponse] = useState("Here is some example text to demonstrate what the response being generated could potentially look like longer and loneger, Here is some example text to demonstrate what the response being generated could potentially look like longer and loneger");
 
   // Function to submit the query to the Supabase Edge Function
   async function submitQuery() {
@@ -47,7 +47,7 @@ export default function Home() {
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-2  font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center w-2/3">
         {response && (
-            <div className="flex items-center">
+            <div className="flex items-start">
               <Image
                 src="/happyhg.png" // path to the image in the public folder
                 alt="Happy face logo"
@@ -55,12 +55,14 @@ export default function Home() {
                 height={25} // Adjust the height
                 className=""
               />
+              <p>:&nbsp;&nbsp;</p> 
               <TypeAnimation
                 sequence={[
-                  `: ${response}`, 
+                  response, 
                 ]}
                 cursor={true}
                 repeat={1}
+                className=""
               />
             </div>
           )}
